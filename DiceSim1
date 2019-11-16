@@ -1,0 +1,21 @@
+import random
+roll = ''
+listOfYes = ['Yes', 'yes', 'yEs', 'yeS', 'YeS', 'YEs', 'yES']
+listOfNo = ['No', 'no', 'nO', 'NO']
+
+print('Welcome to my Dice Simulator.')
+print('Would you like to roll the dice?')
+print('Please type "Yes" or "No".')
+
+choice = input('')
+
+if choice in listOfYes:
+    roll = random.randint(2, 12)
+    print('The dice landed on ' + str(roll))
+    print('Thanks for playing.')
+
+if choice in listOfNo:
+    print('Okay, feel free to come back.')
+
+if choice not in listOfYes and choice not in listOfNo:
+    print('That is not an option, please try again and type either "Yes" or "No".')
