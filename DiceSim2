@@ -1,19 +1,29 @@
 import random
 roll = ''
+chk = True
 
-print('Welcome to my Dice Simulator.')
-print('Would you like to roll the dice?')
-print('Please type "Yes" or "No".')
+while chk:
+  choice = input('Welcome to my Dice Simulator.\n'
+                'Would you like to roll the dice?\n'
+                'Please type "Yes" or "No".')
 
-choice = input('')
-
-if choice in ('Yes', 'yes', 'yEs', 'yeS', 'YeS', 'YEs', 'yES'):
+  if choice.lower() == 'yes':
     roll = random.randint(2, 12)
     print('The dice landed on ' + str(roll))
     print('Thanks for playing.')
-
-if choice in ('No', 'no', 'nO', 'NO'):
+    chk1 = input('Do you want to roll the dice again? Please type "Yes" or "No".')
+    
+    if chk1.lower() == 'yes':
+      continue
+    elif chk1.lower() == 'no':
+      break
+    else:
+      print('That is not an option. Program ending. Goodbye.')
+      break
+    
+  if choice.lower() == 'no':
     print('Okay, feel free to come back.')
 
-if choice not in ('Yes', 'yes', 'yEs', 'yeS', 'YeS', 'YEs', 'yES') and choice not in ('No', 'no', 'nO', 'NO'):
+  if choice.lower() != 'yes' and choice.lower() != 'no':
     print('That is not an option, please try again and type either "Yes" or "No".')
+    continue
